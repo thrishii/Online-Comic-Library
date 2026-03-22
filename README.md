@@ -24,35 +24,36 @@ Jira Board:
 https://connect-team-zonhekne.atlassian.net/jira/software/projects/PROJ/boards/1/timeline?atlOrigin=eyJpIjoiZWIxZjYzMWY3ZDVkNDM5YmI5ZTE4MDUxNDI4MmFlYmUiLCJwIjoiaiJ9
 
 Screenshots
-Use Case Diagram:
-<img width="1920" height="1080" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/b50d490d-a239-4b2d-a0c0-6709e4f5d9b7" />
+Use Case Diagram:<img width="1920" height="1080" alt="Screenshot (596)" src="https://github.com/user-attachments/assets/0d74a04c-7cb0-42f6-b6aa-5f769158f6d0" />
+
+
 
 Block Definition Diagram (BDD)
-<img width="1920" height="1080" alt="Screenshot (585)" src="https://github.com/user-attachments/assets/a219184f-1a60-4813-adc1-5e8d0aa7faf5" />
+<img width="1920" height="1080" alt="Screenshot (598)" src="https://github.com/user-attachments/assets/94ef81a8-8286-4a5c-bd82-ad28ec4d2401" />
+
 
 SSYML requirement Diagram:
-<img width="1920" height="1080" alt="Screenshot (586)" src="https://github.com/user-attachments/assets/abd4b06a-481e-4c8c-b7fb-dfa63be6ded6" />
+<img width="1920" height="1080" alt="Screenshot (597)" src="https://github.com/user-attachments/assets/71bb93e9-d772-40d4-b350-5eda0d6e0bfb" />
+
+Internal Block Diagram
+<img width="1920" height="1080" alt="Screenshot (599)" src="https://github.com/user-attachments/assets/d0362549-a37d-4eb6-a506-11a014a1bc31" />
+
+
 
 Figma diagram:
 Low Fidelity:
-<img width="1920" height="1080" alt="Screenshot (532)" src="https://github.com/user-attachments/assets/4b26970b-fcd5-4f8a-9fb2-18499c82b211" />
-<img width="1920" height="1080" alt="Screenshot (538)" src="https://github.com/user-attachments/assets/79f2bc82-348c-4604-ac3d-3024a633af9b" />
-<img width="1920" height="1080" alt="Screenshot (537)" src="https://github.com/user-attachments/assets/d60ca614-1f3f-4ccd-bf7b-ad96141521b5" />
-<img width="1920" height="1080" alt="Screenshot (536)" src="https://github.com/user-attachments/assets/f814b107-2dbc-459d-b50d-dcc13336229b" />
-<img width="1920" height="1080" alt="Screenshot (535)" src="https://github.com/user-attachments/assets/02204d0e-3207-47f7-99f7-4832aeffc869" />
-<img width="1920" height="1080" alt="Screenshot (533)" src="https://github.com/user-attachments/assets/aad6427c-ca17-4600-9804-deddc622c717" />
+<img width="1920" height="1080" alt="Screenshot (605)" src="https://github.com/user-attachments/assets/c443117f-f8ff-4038-b0f0-661d64f0aba0" />
+<img width="1920" height="1080" alt="Screenshot (604)" src="https://github.com/user-attachments/assets/e8b5bb67-56a6-495f-a788-0a736b01cd83" />
 
 
 High Fidelity:
-<img width="1920" height="1080" alt="Screenshot (548)" src="https://github.com/user-attachments/assets/8b8ee2f6-e4aa-4f3b-8c0d-5eed91634739" />
-<img width="1920" height="1080" alt="Screenshot (547)" src="https://github.com/user-attachments/assets/52048b90-ccdb-4446-b968-eff789861ae2" />
-<img width="1920" height="1080" alt="Screenshot (552)" src="https://github.com/user-attachments/assets/6ea2b98a-e512-4f4b-ba8a-4f432128fd5d" />
-<img width="1920" height="1080" alt="Screenshot (551)" src="https://github.com/user-attachments/assets/3e5f5fca-f58f-4488-8787-a36ad0f1fe01" />
-<img width="1920" height="1080" alt="Screenshot (550)" src="https://github.com/user-attachments/assets/239a63ca-ea15-4705-97e7-5e1d9f90b9d7" />
-<img width="1920" height="1080" alt="Screenshot (549)" src="https://github.com/user-attachments/assets/6a465abc-1b8c-403f-b612-7dfa8ab9083d" />
+<img width="1920" height="1080" alt="Screenshot (603)" src="https://github.com/user-attachments/assets/6385b86e-5d6f-44bf-a530-8f5efa42c35e" />
+<img width="1920" height="1080" alt="Screenshot (602)" src="https://github.com/user-attachments/assets/6d4ad5e1-66f7-4fbc-966e-231c3a610b37" />
 
 
-Jira:<img width="1920" height="1080" alt="Screenshot (504)" src="https://github.com/user-attachments/assets/4f909ced-e815-4f89-a16d-ac0cad0460a2" />
+
+Jira:
+<img width="1920" height="1080" alt="Screenshot (504)" src="https://github.com/user-attachments/assets/4f909ced-e815-4f89-a16d-ac0cad0460a2" />
 <img width="1920" height="1080" alt="Screenshot (503)" src="https://github.com/user-attachments/assets/240abec1-dfd7-4cd9-aed4-b09b42f20e12" />
 <img width="1920" height="1080" alt="Screenshot (502)" src="https://github.com/user-attachments/assets/321f60f9-6c3e-4a0d-8cff-55b6d10f3ac3" />
 <img width="1920" height="1080" alt="Screenshot (478)" src="https://github.com/user-attachments/assets/2081a40a-369f-497a-9b82-6907ea39126c" />
