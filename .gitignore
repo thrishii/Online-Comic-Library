@@ -7,7 +7,7 @@
 /.pnp
 .pnp.js
 
-# cache (IMPORTANT)
+# cache
 .cache/
 frontend/node_modules/.cache/
 
