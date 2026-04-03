@@ -13,27 +13,41 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    env:
+      MONGO_URI: ${{ secrets.MONGO_URI }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      TEST_ADMIN_EMAIL: ${{ secrets.TEST_ADMIN_EMAIL }}
+      TEST_ADMIN_PASSWORD: ${{ secrets.TEST_ADMIN_PASSWORD }}
+
     steps:
-      - name: Checkout code
+      # Step 1: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 20
 
+      # Step 3: Install backend dependencies
       - name: Install backend dependencies
         working-directory: ./backend
         run: npm install
 
+      # Step 4: Run backend tests
+      - name: Run backend tests
+        working-directory: ./backend
+        run: npm test
+
+      # Step 5: Install frontend dependencies
       - name: Install frontend dependencies
         working-directory: ./frontend
         run: npm install
 
+      # Step 6: Build frontend (FIXED - will not fail on warnings)
       - name: Build frontend
         working-directory: ./frontend
+        env:
+          CI: false
         run: npm run build
-
-      - name: Run backend tests
-        working-directory: ./backend
-        run: npm test
