@@ -4,11 +4,9 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 
 dotenv.config();
+connectDB();
 
 const app = express();
-
-// Connect to MongoDB
-connectDB();
 
 // Middleware
 app.use(cors());
@@ -18,8 +16,10 @@ app.use(express.json());
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/comics', require('./routes/comicRoutes'));
 
-if (require.main === module) {
-  const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5001;
+
+// Only start server when not running tests
+if (process.env.NODE_ENV !== 'test') {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
