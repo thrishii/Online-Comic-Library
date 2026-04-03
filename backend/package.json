@@ -1,18 +1,16 @@
 {
   "name": "task-manager-backend",
   "version": "1.0.0",
-  "description": "Backend for Task Manager App",
+  "description": "Backend for Online Comic Library App",
   "main": "server.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha \"test/**/*.js\" --exit",
     "start": "node server.js",
     "dev": "nodemon server.js",
     "prod": "node server.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
-    "chai": "^4.5.0",
-    "chai-http": "^4.3.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -21,7 +19,8 @@
     "request": "^2.88.2"
   },
   "devDependencies": {
-    "chi": "^0.0.10",
+    "chai": "^4.5.0",
+    "chai-http": "^4.3.0",
     "esm": "^3.2.25",
     "mocha": "^11.7.5",
     "nodemon": "^2.0.15",
