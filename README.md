@@ -1,277 +1,229 @@
-Online Comic Library
+# Online Comic Library
 
-Table of Contents
+A full-stack web application that allows users to browse, create, update, and delete comics. This project demonstrates CRUD operations, authentication, CI/CD pipeline setup, and cloud deployment.
 
-1.Project Overview
-2.Objectives
-3.User Roles
-4.System Architecture
-5.Technologies Used
-6.Features
-7.Folder Structure
-8.Installation & Setup
-9.Environment Variables
-10.Running the Application
-11.API Endpoints
-12.Authentication & Security
-13.Automated Testing
-14.User Interface Pages
-15.Role-Based Behaviour
-16.Deployment Plan
-17.Screenshots (Report Requirement)
-18.Future Enhancements
-19.Author
-20.Conclusion
+---
 
+## Table of Contents
 
-1. Project Overview
+- Overview
+- Features
+- Tech Stack
+- Project Structure
+- Installation & Setup
+- API Endpoints
+- Testing
+- CI/CD Pipeline
+- Deployment
+- Screenshots
+- Gen-AI Usage
+- Learnings
+- Conclusion
+- Author
 
-The Online Comic Library is a full-stack web application developed to allow users to browse, search, view, and manage a collection of comics. The system supports secure authentication, role-based access control, and CRUD operations.
+---
 
-This project extends the IFQ636 starter application into a complete system using React, Node.js, Express, and MongoDB. It demonstrates real-world application development including authentication, API design, testing, and deployment preparation.
+## Live Application
+http://3.25.59.150
 
-2. Objectives
-Develop a complete full-stack application
-Implement secure authentication using JWT
-Apply role-based access control (Admin / Customer)
-Provide CRUD functionality for comics
-Build a responsive and user-friendly interface
-Implement automated backend testing
-Prepare the application for CI/CD and deployment
+---
 
-3. User Roles
-Customer
-Register and login
-Browse comics
-Search comics
-View comic details
-Update profile
-Admin
-All customer functionalities
-Add comics
-Edit comics
-Delete comics
+## Overview
 
-4. System Architecture
+This project is a full-stack application built using React, Node.js, and MongoDB. It allows users to manage comic records while implementing authentication, authorization, and DevOps practices.
 
-Frontend:
+---
 
-React.js
-Axios for API communication
-Tailwind CSS for styling
+## Features
 
-Backend:
+### Authentication & Authorization
+- User registration and login using JWT
+- Secure protected routes
+- Role-based access (Admin only for CRUD operations)
 
-Node.js
-Express.js
-RESTful API design
-JWT authentication
+### Comic Management
+- Create comics
+- View comics
+- Update comics
+- Delete comics
 
-Database:
+### DevOps
+- CI/CD pipeline using GitHub Actions
+- Automated testing
+- AWS EC2 deployment
 
-MongoDB Atlas
-Mongoose ODM
-5. Technologies Used
+---
 
-Frontend: React, Tailwind CSS, Axios
+## Tech Stack
 
-Backend: Node.js, Express.js, JWT, bcrypt
+**Frontend**
+- React.js
+- Axios
 
-Database: MongoDB
+**Backend**
+- Node.js
+- Express.js
 
-Testing: Mocha, Chai, Supertest
+**Database**
+- MongoDB Atlas
 
-DevOps: GitHub, GitHub Actions, AWS EC2, PM2, Nginx
+**DevOps**
+- GitHub Actions
+- AWS EC2
+- PM2
+- Nginx
 
-6. Features
+---
 
-Authentication
+## Project Structure
 
-User registration
-Secure login
-JWT token authentication
+```
+Online-Comic-Library/
+├── backend/
+├── frontend/
+└── .github/workflows/ci.yml
+```
 
-Role-Based Access
+---
 
-Admin → Full access
-Customer → Read-only access
+## Installation & Setup
 
-Comic Management
+### Clone Repository
+```
+git clone https://github.com/<your-username>/Online-Comic-Library.git
+cd Online-Comic-Library
+```
 
-Create, Read, Update, Delete (Admin only)
-
-Browse & Search
-
-View all comics
-Search by title, author, genre
-
-Comic Details
-
-View full comic information
-
-Dashboard
-
-Navigation to features
-Role-based display
-
-Image Support
-
-Image URL input
-Preview before saving
-Error handling
-7. Folder Structure
-
-sampleapp_IFQ636
-│
-├── backend
-│ ├── controllers
-│ ├── models
-│ ├── routes
-│ ├── middleware
-│ ├── test
-│ ├── server.js
-│ └── package.json
-│
-├── frontend
-│ ├── src
-│ │ ├── components
-│ │ ├── context
-│ │ ├── pages
-│ │ └── App.js
-│ └── package.json
-│
-└── README.md
-
-8. Installation & Setup
-
-All commands should be run in the terminal from the root project folder.
-
-Step 1: Open project folder in VS Code
-
-Step 2: Install backend dependencies
+### Backend Setup
+```
 cd backend
 npm install
+```
 
-Step 3: Install frontend dependencies
-cd ../frontend
-npm install
+Create `.env` file:
+```
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_secret
+PORT=5001
+TEST_ADMIN_EMAIL=admin@admin.com
+TEST_ADMIN_PASSWORD=123456
+```
 
-9. Environment Variables
+Run backend:
+```
+npm run dev
+```
 
-Create a .env file inside backend folder:
-
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
-TEST_ADMIN_EMAIL=your_admin_email
-TEST_ADMIN_PASSWORD=your_admin_password
-
-10. Running the Application
-
-Start Backend
-cd backend
-npm start
-
-Start Frontend
+### Frontend Setup
+```
 cd frontend
+npm install
 npm start
+```
 
-Application URL
-http://localhost:3000
+---
 
-11. API Endpoints
+## API Endpoints
 
-The backend follows RESTful API design.
+**Auth**
+- POST /api/auth/register
+- POST /api/auth/login
 
-Authentication Routes
+**Comics**
+- GET /api/comics
+- POST /api/comics (Admin)
+- PUT /api/comics/:id (Admin)
+- DELETE /api/comics/:id (Admin)
 
-POST /api/auth/register → Register user
-POST /api/auth/login → Login user
+---
 
-Comic Routes
+## Testing
 
-GET /api/comics → Get all comics
-GET /api/comics/:id → Get comic details
-POST /api/comics → Create comic (Admin only)
-PUT /api/comics/:id → Update comic (Admin only)
-DELETE /api/comics/:id → Delete comic (Admin only)
+- Mocha
+- Chai
+- Sinon
 
-12. Authentication & Security
-JWT authentication implemented
-Password hashing using bcrypt
-Protected routes using middleware
-Role-based access control
-Frontend hides admin features for customers
-13. Automated Testing
-
-Testing is implemented using:
-Mocha, Chai, Supertest
-
-Tested Scenarios
-
-Unauthorized access
-Invalid token
-Admin login and token generation
-Fetch comics
-Create comic
-Get comic details
-Update comic
-Delete comic
-
-Run Tests
-cd backend
+Run:
+```
 npm test
+```
 
-14. User Interface Pages
-Login
-Register
-Dashboard
-Browse Comics
-Comic Details
-Manage Comics (Admin)
-Profile
+All tests passed successfully.
 
-15. Role-Based Behaviour
+---
 
-Customer
+## CI/CD Pipeline
 
-Cannot access Manage Comics
-Cannot add/edit/delete
+- Implemented using GitHub Actions
+- Workflow file: `.github/workflows/ci.yml`
+- Runs on every push
 
-Admin
+---
 
-Full access
-Can manage comics
+## Deployment
 
-16. Deployment Plan
-GitHub for version control
-GitHub Actions for CI/CD
-AWS EC2 (Ubuntu)
-PM2 for process management
-Nginx configuration
-17. Screenshots (Report Requirement)
+- AWS EC2 (Ubuntu)
+- PM2 process manager
+- Nginx reverse proxy
 
-Include:
+Access:
+```
+http://<your-ec2-public-ip>
+```
 
-Login & Register
-Dashboard
-Browse page
-Comic details
-Admin panel
-Testing results
-GitHub repo
-CI/CD workflow
-Deployment
+---
 
-18. Future Enhancements
-Ratings and reviews
-Image upload
-Pagination
-Favourite comics
-Admin analytics
-19. Author
+## Screenshots
+
+- CRUD Operations
+<img width="1920" height="1080" alt="Screenshot (1152)" src="https://github.com/user-attachments/assets/5535e468-1f0e-487f-8ae1-2d1fad52dcc6" />
+<img width="1920" height="1080" alt="Screenshot (1150)" src="https://github.com/user-attachments/assets/459110cf-c014-42c3-a5c9-6ccbc7198344" />
+
+<img width="1920" height="1080" alt="Screenshot (1158)" src="https://github.com/user-attachments/assets/ae6083d3-4960-48d1-82da-3290a58317e9" />
+<img width="1920" height="1080" alt="Screenshot (1155)" src="https://github.com/user-attachments/assets/acac196d-d9a7-4790-a1ff-9bb734e69875" />
+<img width="1920" height="1080" alt="Screenshot (1153)" src="https://github.com/user-attachments/assets/7a364c4a-5f24-47dd-9333-c4b5037b4f74" />
+
+- GitHub Actions
+  
+<img width="1920" height="1080" alt="Screenshot (1066)" src="https://github.com/user-attachments/assets/c4f7836a-b528-4327-996c-5e86ac3567fb" />
+
+- Deployment
+<img width="1920" height="1080" alt="Screenshot (1140)" src="https://github.com/user-attachments/assets/8e014689-860a-49a7-aca9-66631032090f" />
+<img width="1920" height="1080" alt="Screenshot (1139)" src="https://github.com/user-attachments/assets/673ecefd-173d-4170-b6bd-7a98a6a9f04a" />
+<img width="1920" height="1080" alt="Screenshot (1138)" src="https://github.com/user-attachments/assets/35698ab7-f730-480d-a630-6f09f2ebd8f6" />
+<img width="1920" height="1080" alt="Screenshot (1137)" src="https://github.com/user-attachments/assets/246fa4fa-72d8-4c3b-ad81-2e0ae8c1c3e7" />
+<img width="1920" height="1080" alt="Screenshot (1136)" src="https://github.com/user-attachments/assets/4b88c264-96a7-4dc8-97a1-3c3160c7b37a" />
+<img width="1920" height="1080" alt="Screenshot (1135)" src="https://github.com/user-attachments/assets/93eb73e3-6af0-4131-8955-6982c7085110" />
+<img width="1920" height="1080" alt="Screenshot (1134)" src="https://github.com/user-attachments/assets/fd4db947-2d2a-40ed-914e-d0d8749ef000" />
+<img width="1920" height="1080" alt="Screenshot (1133)" src="https://github.com/user-attachments/assets/f748b1ef-1a92-42c4-9b2c-0b0395bed02a" />
+<img width="1920" height="1080" alt="Screenshot (1132)" src="https://github.com/user-attachments/assets/c9de87ed-3819-4f3f-841c-dc8028800d5b" />
+<img width="1920" height="1080" alt="Screenshot (1131)" src="https://github.com/user-attachments/assets/311de242-2eac-4ebe-a304-f5220113b2b6" />
+<img width="1920" height="1080" alt="Screenshot (1066)" src="https://github.com/user-attachments/assets/09fff6ad-e52c-4ea4-9394-5e271d0a8454" />
+<img width="1920" height="1080" alt="Screenshot (1147)" src="https://github.com/user-attachments/assets/d238d05e-a33b-4565-9ecf-76c66b40c554" />
+<img width="1920" height="1080" alt="Screenshot (1146)" src="https://github.com/user-attachments/assets/a23bf9fb-2c1a-4b17-ace7-8c0aaec43a1f" />
+<img width="1920" height="1080" alt="Screenshot (1145)" src="https://github.com/user-attachments/assets/854a67f6-7971-4065-a4a0-9d66e35fd1bb" />
+<img width="1920" height="1080" alt="Screenshot (1144)" src="https://github.com/user-attachments/assets/6ca7fe90-9ea2-4746-869f-2dcf9aaa3468" />
+<img width="1920" height="1080" alt="Screenshot (1143)" src="https://github.com/user-attachments/assets/1e0047eb-84a8-4e49-8a57-4d785382bfb1" />
+<img width="1920" height="1080" alt="Screenshot (1142)" src="https://github.com/user-attachments/assets/00b19e27-6ee2-430f-ad46-d6b4104e5c2b" />
+<img width="1920" height="1080" alt="Screenshot (1141)" src="https://github.com/user-attachments/assets/fd2ab955-021c-4e69-bd7c-8afadc42fabb" />
+
+---
+
+## Learnings
+
+- Full-stack development
+- Authentication & APIs
+- CI/CD pipelines
+- Cloud deployment
+
+---
+
+## Conclusion
+
+This project demonstrates a complete full-stack CRUD application integrated with DevOps practices.
+
+---
+
+## 👩‍💻 Author
 
 Thrishika Rajappaji
-
-20. Conclusion
-
-This project demonstrates a complete full-stack application with authentication, role-based access, CRUD operations, automated testing, and deployment readiness. It reflects modern software engineering practices and real-world application design.
