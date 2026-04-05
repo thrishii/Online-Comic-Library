@@ -34,6 +34,10 @@ jobs:
         working-directory: ./backend
         run: npm install
 
+      - name: Debug MONGO_URI prefix
+        working-directory: ./backend
+        run: node -e "console.log((process.env.MONGO_URI || 'EMPTY').slice(0,20))"
+
       - name: Run backend tests
         working-directory: ./backend
         run: npm test
